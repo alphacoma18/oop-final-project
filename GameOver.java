@@ -1,6 +1,6 @@
 
-public class gameOver {
-    private Timer timer;
+public class GameOver {
+    private Timer timer = new Timer();
      public void startGame() {
         timer = new Timer();
         timer.start();

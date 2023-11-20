@@ -1,12 +1,10 @@
-import java.util.regex.*;
 import java.util.HashSet;
-abstract class Guess {
-    public HashSet<String> guessWords = new HashSet<>();
 
+public class Guess {
+    protected HashSet<String> guessWords = new HashSet<String>();
 
-    protected boolean isGuessCorrect(String guessWord) {
-        Pattern pattern = Pattern.compile(guessWord);
-        Matcher matcher = pattern.matcher(guessWord);
-        return matcher.matches();
+    protected boolean exists(String guessWord) {
+        return guessWords.contains(guessWord);
     }
+
 }

@@ -1,7 +1,7 @@
 public class Timer {
-    private long startTime;
-    private long endTime;
-    private boolean running;
+    private long startTime = 0;
+    private long endTime = 0;
+    private boolean running = false;
 
     public Timer() {
         this.running = false;

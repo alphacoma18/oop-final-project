@@ -29,7 +29,7 @@ class MultiPlayer extends GameMode {
 }
 
 public class PinoyHenyo {
-    HashSet<String> gameModes = new HashSet<>();
+    private HashSet<String> gameModes = new HashSet<>();
     private GameMode gameMode;
     IO io = IO.getInstance();
 
