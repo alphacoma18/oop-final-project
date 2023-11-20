@@ -1,7 +1,7 @@
-import java.util.Set;
+import java.util.HashSet;
 
 abstract class GameMode {
-    String gameMode = "";
+    static String gameMode = "";
 
     abstract void play();
 }
@@ -29,7 +29,7 @@ class MultiPlayer extends GameMode {
 }
 
 public class PinoyHenyo {
-    Set<String> gameModes = Set.of(SinglePlayer.class.getName(), MultiPlayer.class.getName());
+    HashSet<String> gameModes = new HashSet<>();
     private GameMode gameMode;
     IO io = IO.getInstance();
 
@@ -41,24 +41,34 @@ public class PinoyHenyo {
         gameMode.play();
     }
 
-    public void start() {
+    private void prompt() {
+        Integer choice = 0;
         System.out.println("Choose game mode: ");
         gameModes.forEach((gameMode) -> {
             System.out.println(gameMode);
         });
         System.out.print("Enter choice: ");
-        int choice = io.getScanner().nextInt();
-        switch (choice) {
-            case 1:
-                setGameMode(new SinglePlayer());
-                break;
-            case 2:
-                setGameMode(new MultiPlayer());
-                break;
-            default:
-                System.out.println("Invalid choice!");
-                break;
+        while (choice != 1 && choice != 2) {
+            choice = io.getScanner().nextInt();
+            switch (choice) {
+                case 1: {
+                    setGameMode(new SinglePlayer());
+                    break;
+                }
+                case 2: {
+                    setGameMode(new MultiPlayer());
+                    break;
+                }
+                default: {
+                    System.out.println("Invalid choice!");
+                    break;
+                }
+            }
         }
+    } 
+
+    public void start() {
+        prompt();
         play();
     }
 

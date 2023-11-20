@@ -9,14 +9,14 @@
 // 6. E-sports Player
 import java.util.ArrayList;
 
-public class People {
-    protected ArrayList<String> names = new ArrayList<>();
+abstract class People extends Guess {
+    // protected ArrayList<String> names = new ArrayList<>();
 
-    public void addName(String name) {
-        names.add(name);
-    }
+    // public void addName(String name) {
+    //     names.add(name);
+    // }
 
-    public void displayNames() {
-        System.out.println("Names: " + names);
-    }
+    // public void displayNames() {
+    //     System.out.println("Names: " + names);
+    // }
 }

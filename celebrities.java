@@ -1,5 +1,8 @@
+
 import java.util.ArrayList;
+
 public class celebrities extends People {
+    
     private ArrayList<String> celebrityNames = new ArrayList<>();
     public void addCelebrities() {
          String[] celebrityNamesArray = {
@@ -17,7 +20,7 @@ public class celebrities extends People {
             if (guessWord.equalsIgnoreCase(celebName)){
                 System.out.println("CORRECT! YOU GUESSED THE RIGHT PERSON!");
                 System.exit(0); //For now, system exit muna :> 
-            }
+            } 
         }
     }
 }

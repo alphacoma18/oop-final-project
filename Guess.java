@@ -1,10 +1,12 @@
 import java.util.regex.*;
-import java.util.Set;
+import java.util.HashSet;
 abstract class Guess {
-    Set<String> guessWords;
+    public HashSet<String> guessWords = new HashSet<>();
 
-    boolean isGuessCorrect(String guessWord, String[] names) {
-    
-        return false;
+
+    protected boolean isGuessCorrect(String guessWord) {
+        Pattern pattern = Pattern.compile(guessWord);
+        Matcher matcher = pattern.matcher(guessWord);
+        return matcher.matches();
     }
 }
